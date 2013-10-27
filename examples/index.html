@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Validator</title>
+</head>
+<body>
+	<input type="text" class="valid1">
+	<input type="text" class="valid2">
+	<script src="../build/build.js"></script>
+	<script>
+	  var Validator = require('validator');
+	  var validator = new Validator();
+
+	  validator.add('valid1', function(val){
+	  	return val === 'olivier';
+	  });
+	  validator.add('valid2', function(val){
+	  	return val === 'amy';
+	  });
+	  document.body.addEventListener('input', function(e){
+	  	var target = e.target;
+	  	validator.set(target.className, target.value);
+	  });
+
+	</script>
+</body>
+</html>

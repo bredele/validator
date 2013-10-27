@@ -4,11 +4,14 @@
   "description": "",
   "version": "0.0.1",
   "keywords": [],
-  "dependencies": {},
+  "dependencies": {
+    "bredele/doors": "*"
+  },
   "development": {},
   "license": "MIT",
   "main": "index.js",
   "scripts": [
     "index.js"
-  ]
+  ],
+  "remotes": []
 }
