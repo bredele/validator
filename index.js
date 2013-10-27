@@ -19,8 +19,8 @@ module.exports = Validator;
  */
 
 function Validator() {
-	this.validations = {};
-	this.doors = new Doors('validator');
+  this.validations = {};
+  this.doors = new Doors('validator');
 }
 
 
@@ -34,8 +34,8 @@ function Validator() {
  */
 
 Validator.prototype.add = function(name, callback, required) {
-	this.validations[name] = callback;
-	if(required || true) this.doors.add(name);
+  this.validations[name] = callback;
+  if(required || true) this.doors.add(name);
 };
 
 
@@ -48,7 +48,7 @@ Validator.prototype.add = function(name, callback, required) {
  */
 
 Validator.prototype.set = function(name, value) {
-	this.doors.toggle(name, this.validations[name](value));
-	return !this.doors.has(name);
+  this.doors.toggle(name, this.validations[name](value));
+  return !this.doors.has(name);
 };
 
