@@ -16,13 +16,18 @@
 	  	return val === 'olivier';
 	  });
 	  validator.add('valid2', function(val){
-	  	return val === 'amy';
+	  	console.log(!!~val.indexOf('amy'));
+	  	return !!~val.indexOf('amy');
 	  });
 	  document.body.addEventListener('input', function(e){
 	  	var target = e.target;
+
 	  	validator.set(target.className, target.value);
 	  });
 
+	  validator.doors.on('open', function() {
+	  	alert('haha');
+	  });
 	</script>
 </body>
 </html>

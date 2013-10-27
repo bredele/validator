@@ -35,7 +35,7 @@ function Validator() {
 
 Validator.prototype.add = function(name, callback, required) {
 	this.validations[name] = callback;
-	if(required) this.doors.add(name);
+	if(required || true) this.doors.add(name);
 };
 
 
