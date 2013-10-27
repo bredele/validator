@@ -43,10 +43,12 @@ Validator.prototype.add = function(name, callback, required) {
  * Set 
  * @param {String} name  
  * @param {Any} value
+ * @return {Boolean} true if valid
  * @api public
  */
 
 Validator.prototype.set = function(name, value) {
 	this.doors.toggle(name, this.validations[name](value));
+	return !this.doors.has(name);
 };
 
